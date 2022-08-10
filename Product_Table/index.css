@@ -1,0 +1,84 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+
+
+#form{
+    width:40vw;
+    height:70vh;
+    display:grid;
+  margin:auto;
+  text-align: center;
+  margin-top:50px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+  #form>h1{
+   font-size:150%;
+   margin-top:15px;
+  }
+
+
+
+#products{
+    width:90%;
+height:100%;
+display:grid;
+gap:15px;
+margin:auto;
+margin-top:-20px;
+
+
+}
+
+#products select,input{
+    width:100%;
+   height:6vh; 
+   padding-left: 3px;
+   font-weight: bolder;
+   border:2px solid rgba(0, 0, 0, 0.541);
+   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+#searchh{
+    width:40vw;
+    margin:auto;
+
+}
+
+#search{
+
+    width:100%;
+    margin-top:50px;
+    border:2px solid rgba(0, 0, 0, 0.541);
+}
+
+#table{
+   height:1000vh;
+    width:80vw;
+    margin:auto;
+    margin-top:20px;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+  
+}
+
+#table table{
+width:100%;
+    margin:auto;
+    margin-top:20px;
+}
+
+#tr>th{
+   height:2.5vw;
+   width:2.5vw;
+   font-size:auto;
+    background-color: rgba(255, 255, 0, 0.884);
+    border:1px solid rgba(0, 0, 0, 0.479);
+  }
+
+td{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+cursor:default
+}
+

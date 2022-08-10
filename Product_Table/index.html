@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Table</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+
+  <body>
+    <div id="form">
+      <h1>Add new Product</h1>
+      <form id="products">
+        <input placeholder="Name" type="text" id="name" />
+
+        <select id="category">
+          <option value="">Select Category</option>
+          <option value="Electronics">Electronics</option>
+          <option value="Fashion">Fashion</option>
+          <option value="Food">Food</option>
+        </select>
+
+        <select id="listed">
+          <option value="">Select Listed Items</option>
+          <option value="Amazon">Amazon</option>
+          <option value="Flipcart">Flipcart</option>
+          <option value="Apple">Apple</option>
+          <option value="Jockey">Jockey</option>
+        </select>
+
+        <input placeholder="Price" type="number" id="price" />
+        <input type="date" id="date" />
+        <input placeholder="Has Sold" type="number" id="sold" />
+        <input type="submit" value="submit" />
+      </form>
+    </div>
+
+    <div id="searchh">
+      <input placeholder="Search" type="text" id="search" />
+    </div>
+
+    <div id="table">
+      <table>
+        <thead>
+          <tr id="tr">
+            <th>Product Name</th>
+            <th>Category</th>
+            <th>Listed Site</th>
+            <th>Price</th>
+            <th>Listing Date</th>
+            <th>Sold Number</th>
+            <th>Total Revenue</th>
+            <th>Delete</th>
+          </tr>
+   </thead>
+    <tbody>
+    <!-- all the data should be appended here-->
+    </tbody>
+      </table>
+     
+    </div>
+  </body>
+</html>
+<script src="index.js"></script>
