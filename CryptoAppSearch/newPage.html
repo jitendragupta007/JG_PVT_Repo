@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Page</title>
+    <link rel="stylesheet" href="newPage.css">
+</head>
+<body>
+    
+<div id="container"></div>
+</body>
+</html>
+<script>
+let defaultCrypto={
+      id: 'bitcoin',
+      name: 'Bitcoin',
+      image: 'https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579',
+      curr_price: 23747,
+      market_cap: 453023083866,
+      high24: 23792,
+      low24: 22036
+    };
+let LSdata= JSON.parse(localStorage.getItem("newPage"))||defaultCrypto;
+console.log(LSdata);
+
+function display(data){
+let tr=document.createElement("div");
+    let td3 = document.createElement("img");
+    td3.src = data.image;
+    let td1 = document.createElement("div");
+    td1.innerText = "ID: "+data.id;
+    let td2 = document.createElement("div");
+    td2.innerText = "Name: "+data.name;
+    let td4 = document.createElement("div");
+    td4.innerText = "Current Price: "+data.curr_price;
+    let td5 = document.createElement("div");
+    td5.innerText = "Total Market Cap: "+data.market_cap;
+    let td6 = document.createElement("div");
+    td6.innerText = "High24: " +data.high24;
+    let td7 = document.createElement("div");
+    td7.innerText ="Low24: " +data.low24;
+ tr.append(td3,td1, td2,td4, td5, td6, td7);
+
+ document.querySelector("#container").append(tr);
+
+}
+
+display(LSdata);
+
+
+</script>
