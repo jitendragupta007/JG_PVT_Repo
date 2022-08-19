@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Puppy</title>
+    <style>
+      img {
+        width: 400px;
+        height: 300px;
+        margin-left: 25px;
+      }
+
+      button {
+        margin-top: 20px;
+        margin-left: 50px;
+        margin-bottom: 50px;
+        padding: 5px 20px;
+        border: 1px solid rgba(0, 0, 0, 0.61);
+        border-radius: 15%;
+        background-color: rgba(0, 0, 255, 0.932);
+        color: white;
+        letter-spacing: 1.5px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: rgba(0, 0, 0, 0.767);
+        color: white;
+      }
+
+      h1 {
+        margin-left: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <img src="https://wallpaperaccess.com/full/390954.jpg" alt="" />
+    </div>
+    <div>
+      <h1>Like: <span id="likeOut"> </span></h1>
+      <h1>DisLike: <span id="disLikeOut"> </span></h1>
+    </div>
+    <div>
+      <button id="likeBtn">Like</button>
+      <button id="disLikeBtn">DisLike</button>
+    </div>
+  </body>
+</html>
+
+<script>
+  let likeCount;
+  if (localStorage.getItem("puppyLikes") == null) {
+    likeCount = 0;
+  } else {
+    likeCount = localStorage.getItem("puppyLikes");
+  }
+  document.querySelector("#likeOut").innerText = likeCount;
+
+  let disLikeCount;
+  if (localStorage.getItem("puppyDisLikes") == null) {
+    disLikeCount = 0;
+  } else {
+    disLikeCount = localStorage.getItem("puppyDisLikes");
+  }
+  document.querySelector("#disLikeOut").innerText = disLikeCount;
+
+  document.querySelector("#likeBtn").addEventListener("click", likeFunc);
+  document.querySelector("#disLikeBtn").addEventListener("click", disLikeFunc);
+
+  function likeFunc() {
+    likeCount++;
+    document.querySelector("#likeOut").innerText = likeCount;
+    localStorage.setItem("puppyLikes", likeCount);
+  }
+
+  function disLikeFunc() {
+    disLikeCount++;
+    document.querySelector("#disLikeOut").innerText = disLikeCount;
+    localStorage.setItem("puppyDisLikes", disLikeCount);
+  }
+</script>

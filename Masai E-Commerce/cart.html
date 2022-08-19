@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Page</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <h1>Total Cart Value: <span id="total">0</span></h1>
+    <div id="container"></div>
+</body>
+
+<script>
+
+let container = document.querySelector("#container");
+let cartLS = JSON.parse(localStorage.getItem("cart-page")) || [];
+let totalPrice= document.querySelector("#total");
+
+    function Display(data) {
+      container.innerHTML = null;
+      let total=0;
+      data.forEach(function (ele,index) {
+        total += +(ele.price);
+        let product = document.createElement("div");
+        let img = document.createElement("img");
+        img.src = ele.img;
+        let name = document.createElement("h1");
+        name.innerText = ele.brand;
+        let price = document.createElement("h2");
+        price.innerText = ele.price;
+        let catagory = document.createElement("p");
+        catagory.innerText = ele.catagory;
+        let DeleteBtn = document.createElement("button");
+        DeleteBtn.innerText = "Remove";
+        DeleteBtn.addEventListener("click", function () {
+            DeleteCart(index);
+          
+        });
+        product.append(img, name, price, catagory, DeleteBtn);
+        container.append(product);
+      });
+
+      totalPrice.textContent=total;
+    }
+
+    Display(cartLS);
+
+    function DeleteCart(index){
+       let deletedCart= cartLS.filter(function(el,i){
+            return i != index;
+
+        });
+        Display(deletedCart);
+        localStorage.setItem("cart-page",JSON.stringify(deletedCart))
+    }
+
+</script>

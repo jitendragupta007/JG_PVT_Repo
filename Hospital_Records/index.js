@@ -33,8 +33,7 @@ drArr.push(docObj);
     let row= document.createElement("tr");
     if(i%2!=0){
         row.style.backgroundColor="blue";
-        
-    }
+        }
     let col1= document.createElement("td");
     col1.innerText=drArr[i].drName;
     let col2= document.createElement("td");

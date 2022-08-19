@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>signin</title>
+
+    <style>
+      form {
+        display: grid;
+        width: 300px;
+        height: 100px;
+        margin: auto;
+        margin-top: 30px;
+        gap: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <input type="email" id="email" placeholder="Enter Email" />
+
+      <input type="password" id="password" placeholder="Enter Password" />
+      <input type="submit" value="Sign in" />
+    </form>
+  </body>
+  </html>
+  <script>
+    let form = document.querySelector("form");
+  
+    let signupLS = JSON.parse(localStorage.getItem("signup")) || [];
+  
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+  
+      if (signupLS.length === 0) {
+        alert("No user till Now");
+        return;
+      }
+  
+      let obj = {
+        Email: form.email.value,
+        Password: form.password.value,
+      };
+  
+      let isSignedin = false;
+      signupLS.forEach(function (ele) {
+        if (ele.Email === obj.Email && ele.Password === obj.Password) {
+          isSignedin = true;
+          localStorage.setItem("signin", JSON.stringify(ele));
+          alert("Sign in Succesful");
+          window.location.href = "index.html";
+        }
+      });
+  
+      if (isSignedin == false) {
+        alert("User Doesn't Exist");
+      }
+    });
+  </script>
+  
+
+

@@ -1,0 +1,12 @@
+img{
+    width:150px;
+    margin-top:40px;
+
+}
+
+
+#container>div:nth-child(1){
+font-size:20px;
+margin-left: 50px;
+
+}

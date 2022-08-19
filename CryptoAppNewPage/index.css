@@ -1,0 +1,68 @@
+img {
+  width: 100%;
+  height: 9vh;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+margin: auto;
+padding:4px 0px;
+}
+
+th {
+  background-color: rgba(0, 0, 255, 0.726);
+  height: 40px;
+  padding: 0px 5px;
+}
+
+td {
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  font-size: 1.5vw;
+  padding: 5px;
+}
+
+table {
+  width: 90vw;
+  height: auto;
+  margin: auto;
+}
+
+select {
+margin: 20px;
+width:10vw;
+padding:3px;
+margin-left:4vw;
+
+}
+
+#pagination{
+
+    width:150px;
+    margin:auto;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    }
+    
+
+    button{
+
+        margin-left:5px;
+        background-color:blue;
+        color:white;
+        padding:2px 7px;
+        border: 0px;
+        cursor: pointer;
+    }
+    button:hover{
+
+        background-color:rgba(0, 0, 0, 0.747);
+    }
+
+    tr,td{
+
+      cursor:pointer;
+    }
+
+    #search{
+
+      margin-left:4vw;
+       height:20px;
+    }
