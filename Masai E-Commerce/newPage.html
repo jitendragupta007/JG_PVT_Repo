@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Page</title>
+    <style>
+
+
+img{
+    width:150px;
+}
+
+#container>div{
+    width:200px;
+    padding:20px;
+    margin-left:100px;
+    margin-top:100px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+   
+}
+    </style>
+</head>
+
+<body>
+    <div id="container"></div>
+</body>
+</html>
+
+<script>
+let default_product={
+    brand: 'Dell',
+    img: 'https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/m/u/musebud_grey.jpg?rnd=20200526195200',
+    price: 900,
+    details: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, sequi.',
+    catagory: 'Laptop'
+  }
+
+  let LSdata=JSON.parse(localStorage.getItem("newPage"))||[];
+
+  function display(data){
+let divv= document.createElement("div");
+let brand=document.createElement("h4");
+brand.innerText="Brand:- "+data.brand;
+let imgg= document.createElement("img");
+imgg.src= data.img;
+let pricee=document.createElement("h5");
+pricee.innerText="Price:- "+data.price;
+let catagory= document.createElement("p");
+catagory.innerText="Catagory:- "+ data.catagory;
+
+divv.append(imgg,brand,catagory,pricee);
+document.querySelector("#container").append(divv)
+
+ }
+
+
+ display(LSdata);
+
+
+
+
+
+
+
+
+</script>

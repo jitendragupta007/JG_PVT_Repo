@@ -13,10 +13,7 @@
 <a href="signup.html"><button>Sign Up</button></a>
 <a href="signin.html"><button>Sign In</button></a>
 <a href="cart.html"><button>Cart</button></a>
-
-
-
-    </div>
+</div>
 
     <select id="filter">
       <option value="">Select Category</option>
@@ -27,6 +24,13 @@
       <option value="Smart TV">Smart TV</option>
     </select>
 
+    <select id="sort">
+      <option value="">Sort By 24 Hr</option>
+      <option value="High-Low">High-Low</option>
+      <option value="Low-High">Low-High</option>
+     </select>
+  
+
     <div id="container"></div>
   </body>
 
@@ -35,7 +39,7 @@
       {
         brand: "Zebronics",
         img: "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/n/y/nyfboat000113_1_cc965b26.jpg?rnd=20200526195200",
-        price: 100,
+        price: 200,
         productID:"product1",
         details:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, sequi.",
@@ -44,7 +48,7 @@
       {
         brand: "Zebronics",
         img: "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/n/y/nyfblta000011_1.jpg?rnd=20200526195200",
-        price: 100,
+        price: 300,
         productID:"product2",
         details:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, sequi.",
@@ -53,7 +57,7 @@
       {
         brand: "Zebronics",
         img: "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/b/c/bc60a_1_c82d81cb.jpg?rnd=20200526195200",
-        price: 100,
+        price: 400,
         productID:"product3",
         details:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, sequi.",
@@ -62,7 +66,7 @@
       {
         brand: "Zebronics",
         img: "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/6/1/619660798426_1_727221ba.jpg?rnd=20200526195200",
-        price: 100,
+        price: 500,
         productID:"product4",
         details:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, sequi.",
@@ -71,7 +75,7 @@
       {
         brand: "Zebronics",
         img: "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/c/_/c_8907605107849_1_655fcbdf.jpg?rnd=20200526195200",
-        price: 100,
+        price: 600,
         productID:"product5",
         details:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, sequi.",
@@ -80,7 +84,7 @@
       {
         brand: "Apple",
         img: "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/c/o/cor-nyfcrca000039_1_369033fe.jpg?rnd=20200526195200",
-        price: 100,
+        price: 700,
         productID:"product6",
         details:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, sequi.",
@@ -89,7 +93,7 @@
       {
         brand: "Apple",
         img: "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/a/m/ambrane_8904258106557_1_aff3c266.jpg?rnd=20200526195200",
-        price: 100,
+        price: 800,
         productID:"product7",
         details:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, sequi.",
@@ -98,7 +102,7 @@
       {
         brand: "Apple",
         img: "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/n/y/nyfblta000009_1.jpg?rnd=20200526195200",
-        price: 100,
+        price: 900,
         productID:"product8",
         details:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, sequi.",
@@ -107,7 +111,7 @@
       {
         brand: "Apple",
         img: "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/z/b/zb_8906108615899_1_44867a4c.jpg?rnd=20200526195200",
-        price: 100,
+        price: 1000,
         productID:"product9",
         details:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, sequi.",
@@ -305,83 +309,7 @@
     ];
   </script>
 
-  <script>
-    let container = document.querySelector("#container");
-    let filter = document.querySelector("#filter");
-    let cartLS = JSON.parse(localStorage.getItem("cart-page")) || [];
 
-    function Display(data) {
-      container.innerHTML = null;
-      data.forEach(function (ele) {
-        let product = document.createElement("div");
-        let img = document.createElement("img");
-        img.src = ele.img;
-        let name = document.createElement("h1");
-        name.innerText = ele.brand;
-        let price = document.createElement("h2");
-        price.innerText = ele.price;
-        let catagory = document.createElement("p");
-        catagory.innerText = ele.catagory;
-        let cart = document.createElement("button");
-        cart.innerText = "add to cart";
-        cart.addEventListener("click", function () {
-          AddToCart(ele);
-        });
-        product.append(img, name, price, catagory, cart);
-        container.append(product);
-      });
-    }
-
-    Display(product_data);
-
-    filter.addEventListener("change", function () {
-      if (filter.value === "") {
-        Display(product_data);
-      } else {
-        let filtered = product_data.filter(function (ele) {
-          return ele.catagory === filter.value;
-        });
-        Display(filtered);
-        console.log(filtered);
-      }
-    });
-
-    function AddToCart(product) {
-        let iscartAdded=false;
-      for (let i = 0; i < cartLS.length; i++) {
-        if (cartLS[i].productID === product.productID) {
-          alert("Product already in the cart");
-          iscartAdded=true;
-          break;
-        }
-      }
- if(iscartAdded==false){
-      cartLS.push(product);
-      alert("Product Added Successfully");
-      localStorage.setItem("cart-page",JSON.stringify(cartLS));
-    }
-}
-  </script>
-
-<script>
-let signinLS= JSON.parse(localStorage.getItem("signin"));
-let nav= document.getElementById("nav");
-    if(signinLS != null){
-    nav.innnerHTML=null;
-    let username= document.createElement("h1");
-    username.innerText= signinLS.Name;
-    let cartBTN= document.createElement("a");
-    cartBTN.setAttribute("href","cart.html");
-    cartBTN.innerText="CART";
-    nav.append(username,cartBTN);
-}
-
-
-</script>
-
-
-
-
-
-
+<script src="index.js"></script>
+ 
 </html>

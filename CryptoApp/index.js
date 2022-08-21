@@ -83,28 +83,6 @@ let filteredD = crypto_data.filter(function(elem){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function displayPagination(pages){
     for(let i=1; i<=pages; i++){
 let btn= document.createElement("button");

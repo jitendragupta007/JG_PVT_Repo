@@ -1,0 +1,26 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+
+}
+
+
+
+form{
+width:25vw;
+height:auto;
+display:grid;
+gap:10px;
+margin:auto;
+margin-top:40px;
+box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+padding:20px;
+}
+
+
+select, input{
+    width:90%;
+    height:25px;
+    margin:auto;
+}

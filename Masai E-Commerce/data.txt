@@ -2,21 +2,21 @@ Product_Data=[
   {
     brand: 'Zebronics',
     img: 'https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/n/y/nyfboat000113_1_cc965b26.jpg?rnd=20200526195200',
-    price: 100,
+    price: 800,
     details: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, sequi.',
     catagory: 'Laptop'
   },
   {
     brand: 'Zebronics',
     img: 'https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/n/y/nyfblta000011_1.jpg?rnd=20200526195200',
-    price: 100,
+    price: 500,
     details: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, sequi.',
     catagory: 'Mobile'
   },
   {
     brand: 'Zebronics',
     img: 'https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/b/c/bc60a_1_c82d81cb.jpg?rnd=20200526195200',
-    price: 100,
+    price: 200,
     details: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, sequi.',
     catagory: 'Head Phones'
   },
@@ -107,7 +107,7 @@ Product_Data=[
   {
     brand: 'Dell',
     img: 'https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/m/u/musebud_grey.jpg?rnd=20200526195200',
-    price: 100,
+    price: 900,
     details: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, sequi.',
     catagory: 'Laptop'
   },
@@ -121,14 +121,14 @@ Product_Data=[
   {
     brand: 'Dell',
     img: 'https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/n/y/nyfboat000113_1_cc965b26.jpg?rnd=20200526195200',
-    price: 100,
+    price: 1000,
     details: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, sequi.',
     catagory: 'Head Phones'
   },
   {
     brand: 'Dell',
     img: 'https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/n/y/nyfboat000113_1_cc965b26.jpg?rnd=20200526195200',
-    price: 100,
+    price: 1200,
     details: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, sequi.',
     catagory: 'Speakers'
   },
